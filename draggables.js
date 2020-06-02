@@ -48,8 +48,8 @@ class DraggableCanvas extends HTMLElement {
         this.attachShadow({ mode: "open" });
         this.shadowRoot.innerHTML += `<canvas width="100" height="100"></canvas>`;
         this.canvas = this.shadowRoot.lastChild;
-        this.canvas.width = "2000";
-        this.canvas.height = "2000";
+        this.canvas.width = this.getAttribute("width");
+        this.canvas.height = this.getAttribute("height");
         this.canvas.onmousemove = (event)=> {
             if (event.button ^ event.buttons) {
                 this.handleDragEvent(event);
