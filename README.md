@@ -6,7 +6,13 @@
 
 >HTML
 ```html
-<drag-canvas id="drag" width="2000" height="2000"> </drag-canvas>
+<head> 
+  <script src="https://raw.githubusercontent.com/classAndrew/Draggable/master/draggables.js">
+  <script src="your_script.js">
+</head>
+<body>
+  <drag-canvas id="drag" width="2000" height="2000"> </drag-canvas>
+</body>
 ```
 >JS
 
@@ -14,8 +20,8 @@
 // Create your own class from the abstract class
 
 class ImageDrawable extends Drawable {
-    constructor(ctx, x, y, htmlsrc) {
-        super(ctx, x, y, x + 128, y + 128);
+    constructor(x, y, htmlsrc) {
+        super(x, y, x + 128, y + 128);
         Object.assign(this, {x, y, htmlsrc});
     }
     draw(ctx) {
@@ -27,11 +33,11 @@ class ImageDrawable extends Drawable {
 
 window.onload = () => {
     let test = document.querySelector("#drag");
-    test.addDrawable(new Rectangle(test.getCtx(), 450, 24, 100, 100));
-    test.addDrawable(new Rectangle(test.getCtx(), 0, 20, 300, 100));
-    let image = document.createElement("img");
-    image.src = "yourimgurl";
-    test.addDrawable(new ImageDrawable(test.getCtx(), 75, 450, image));
+    test.addDrawable(new Rectangle(450, 24, 100, 100));
+    test.addDrawable(new Rectangle(0, 20, 300, 100));
+    let image = document.createElement("img")
+    image.src = "your_img_url.png"
+    test.addDrawable(new ImageDrawable(75, 450, image));
 }
 
 ```
