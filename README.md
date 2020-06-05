@@ -7,8 +7,8 @@
 >HTML
 ```html
 <head> 
-  <script src="https://raw.githubusercontent.com/classAndrew/Draggable/master/draggables.js">
-  <script src="your_script.js">
+  <script src="https://raw.githubusercontent.com/classAndrew/Draggable/master/draggables.js"> </script>
+  <script src="your_script.js"> </script>
 </head>
 <body>
   <drag-canvas id="drag" width="2000" height="2000"> </drag-canvas>
